@@ -1,0 +1,51 @@
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Net.Cache;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{ 
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            TestingInterface testInterface = new TestingInterface();
+            testInterface.Add(13, 78);
+            testInterface.Sub(145, 90);
+            Console.ReadKey();  
+        }
+        interface ITestInterface1 {    
+        
+        void Add (int num1,int num2);
+
+        }
+        interface ITestInterface2 { 
+         void Add (int num1,int num2);
+         void Sub(int num1,int num2);
+
+        }
+        public class TestInterface : ITestInterface1
+        {
+            public void Add(int num1, int num2)
+            {
+                Console.WriteLine(num1+", "+num2);
+            }
+        }
+        public class TestingInterface : ITestInterface2
+        {
+            public void Add(int num1, int num2)
+            {
+                Console.WriteLine (num1+num2);
+            }
+
+            public void Sub(int num1, int num2)
+            {
+                Console.WriteLine(num1 - num2);
+            }
+        }
+    }
+ }
