@@ -1,0 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Net.Cache;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{ 
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+            Class1 class1 = new Class1();
+            class1.Add(12, 45);
+            class1.Add(45.8f,89.8f);
+            Console.ReadKey();
+        }
+        public class Class1
+        {
+            public void Add(int a, int b)
+        {
+            Console.WriteLine(a+b); 
+        }
+              public void Add(float a, float b)
+            {
+                Console.WriteLine(a+b);
+            }
+        }
+    }
+}
