@@ -1,0 +1,36 @@
+using System;
+using System.Collections.Generic;
+using System.Data.SqlClient;
+using System.Linq;
+using System.Net.Cache;
+using System.Security.Cryptography.X509Certificates;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp6
+{ 
+    public class Program
+    {
+        static void Main(string[] args)
+        {
+           Class1 obj = new Class1();
+                 obj.show();
+            Console.ReadKey();
+        }
+        public class Class1
+        {
+            public virtual void show()
+            {
+                Console.WriteLine("Parent Class Show Method");
+            }
+        }
+        class class2 : Class1
+        {
+            public override void show()
+            {
+                Console.WriteLine("Child class show method");
+            }
+        }
+    }
+}
+
